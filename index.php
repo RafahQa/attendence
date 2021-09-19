@@ -38,7 +38,7 @@
         </div>
         <div class="mb-3">
             <label for="phone" class="form-label">Contact Number</label>
-            <input type="text" class="form-control" id="phone" name="phone">
+            <input type="tel" class="form-control" id="phone" name="phone">
             <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
