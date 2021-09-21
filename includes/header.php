@@ -1,3 +1,7 @@
+<?php
+  include_once 'session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,21 +16,30 @@
 </head>
 <body>
     <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+    <div class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">IT Conference</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link " aria-current="page" href="index.php">Home</a>
-            <a class="nav-link " href="viewrecords.php">View Attendence</a>
+            <a class="nav-link nav-item " aria-current="page" href="index.php">Home</a>
+            <a class="nav-link nav-item " href="viewrecords.php">View Attendence</a>
           </div>
         </div>
-      </div>
-    </nav>
-</br>
+        <div class="navbar-nav d-flex">
+          <?php 
+          if (!isset($_SESSION['id'])) 
+           {
+          ?>
+             <a class=" navbar-brand btn btn-outline-success nav-item" aria-current="page" href="login.php">Login</a>
+           <?php } else { ?>
+             <span class=" navbar-brand text-secondary">Hello <?php echo $_SESSION['username']."!" ?></span>
+             <a class=" navbar-brand btn btn-outline-danger nav-item" aria-current="page" href="logout.php">Logout</a>
+           <?php } ?>
+        </div>
+    </div>
+      </br>
 
 
 

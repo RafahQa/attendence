@@ -2,6 +2,8 @@
     $title = 'Success';
     require_once 'includes/header.php';
     require_once 'db/conn.php';
+    require_once 'sendemail.php';
+    
 
 
     if(isset($_POST['submit']))
@@ -18,6 +20,8 @@
         
         if($isSuccess)
         {
+            $sendEmail = new SendEmail();
+            $sendEmail->sendMail($email,'Welcome to IT conference','You have been successfully registerted for IT conference');
             //print success
             include 'includes/successmessage.php';
         }

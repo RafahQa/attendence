@@ -1,0 +1,8 @@
+{
+    "require": {
+        "sendgrid/sendgrid": "^7.9",
+        "mailjet/mailjet-apiv3-php": "^1.5",
+        "psr/log": "^3.0",
+        "laminas/laminas-httphandlerrunner": "^2.0"
+    }
+}

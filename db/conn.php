@@ -1,18 +1,20 @@
 <?php
    //local database
-   // $host = '127.0.0.1';
-   // $db = 'attendence_db';
-   // $user = 'root';
-   // $pass = '';
-   // $charset = 'utf8mb4';
+    $host = '127.0.0.1';
+    $db = 'attendence_db';
+    $user = 'root';
+    $pass = '';
+    $charset = 'utf8mb4';
 
    //Remote Database
-   $host = 'sql4.freemysqlhosting.net';
-   $db = 'sql4438302';
-   $user = 'sql4438302';
-   $pass = 'rteeUW7EQy';
-   $charset = 'utf8mb4';
-    //data source name 
+   // $host = 'sql4.freemysqlhosting.net';
+   // $db = 'sql4438302';
+   // $user = 'sql4438302';
+   // $pass = 'rteeUW7EQy';
+   // $charset = 'utf8mb4';
+     
+   
+   //data source name 
    $dsn = "mysql:host=$host; dbname=$db; charset=$charset";
 
    try {
@@ -25,5 +27,9 @@
    }
 
    require_once 'crud.php';
+   require_once 'user.php';
    $crud = new crud($pdo);
+   $user = new user($pdo);
+
+   $user->insertUser("admin","password");
 ?>
