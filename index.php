@@ -9,7 +9,7 @@
     <h1 class ="text-center">Regestration for IT Conference</h1>
 
     
-    <form method="post" action="success.php">
+    <form method="post" action="success.php" enctype='multipart/form-data'>
     <div class="mb-3">
             <label for="firstname" class="form-label">First Name</label>
             <input required type="text" class="form-control" id="firstname" name="firstname">
@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3">
             <label for="specialty" class="form-label">Area Of Expertise</label>
-            <input class="form-control" list="datalistOptions" id="specialty" name= "specialty" placeholder="Type to search...">
+            <input required class="form-control" list="datalistOptions" id="specialty" name= "specialty" placeholder="Type to search...">
             <datalist id="datalistOptions" >
                 <?php while ($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
                     <option value="<?php echo $r['specialty_id'] ?>"><?php echo $r['name'] ?></option>
@@ -41,6 +41,11 @@
             <input type="tel" class="form-control" id="phone" name="phone">
             <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
         </div>
+        <div class="mb-3">
+            <label for="avatar" class="form-label">Upload Image (Optional)</label>
+            <input type="file" accept="image/*" class="form-control" id="avatar" name="avatar">
+        </div>
+        <br>
         <div class="d-grid gap-2 col-6 mx-auto">
             <button type="submit" name="submit" class="btn btn-success">Submit</button>
         </div>

@@ -15,12 +15,14 @@
         $result=$crud->getAttendeeDetails($id);
 ?>
 
-    <div class="card" style="width: 25rem;">
+        <div class="card" style="width: 25rem;">
+        <img class="card-img-top rounded" src="<?php echo empty($result['avatarpath']) ? "uploads/blank.png" : $result['avatarpath'];?>">
         <div class="card-body">
             <h5 class="card-title">
                  <?php echo $result['firstname']." ".$result['lastname'];?> 
             </h5>
         </div>
+        <div class="card-body">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <?php echo "Date of Birth: ".$result['dateofbirth'] ;?>
@@ -35,6 +37,7 @@
                 <?php echo "Contact Number: ".$result['contactnumber'] ;?>
             </li>
         </ul>
+        </div>
     </div>
     </br>
     <a class="btn btn-info" href="viewrecords.php">Back to list</a>

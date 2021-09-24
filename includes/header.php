@@ -15,8 +15,7 @@
     <title> Attendence - <?php echo  $title ?></title>
 </head>
 <body>
-    <div class="container">
-    <div class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
+     <div class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">IT Conference</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -38,7 +37,9 @@
              <a class=" navbar-brand btn btn-outline-danger nav-item" aria-current="page" href="logout.php">Logout</a>
            <?php } ?>
         </div>
-    </div>
+     </div>
+    <div class="container">
+   
       </br>
 
 

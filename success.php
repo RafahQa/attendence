@@ -15,8 +15,15 @@
         $email = $_POST['email'];
         $contact = $_POST['phone'];
         $specialty = $_POST['specialty'];
+        //save the choosen file
+        $origin_File = $_FILES["avatar"]["tmp_name"];
+        $extention = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        $targer_Dir = 'uploads/';
+        $destination = $targer_Dir.$contact.".".$extention;
+        move_uploaded_file($origin_File,$destination);
+        
         //call insert function
-        $isSuccess = $crud->insert($fname, $lname, $dob, $email, $contact, $specialty);
+        $isSuccess = $crud->insert($fname, $lname, $dob, $email, $contact, $specialty,$destination);
         
         if($isSuccess)
         {
@@ -57,13 +64,17 @@
             </li>
         </ul>
     </div> -->
+
+
     <!-- print out values using post -->
     <div class="card" style="width: 25rem;">
+        <img src="<?php echo $destination;?>" class="card-img-top">
         <div class="card-body">
             <h5 class="card-title">
                  <?php echo $_POST['firstname']." ".$_POST['lastname'];?> 
             </h5>
         </div>
+        <div class="card-body">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <?php echo "Date of Birth: ".$_POST['dob'] ;?>
@@ -78,9 +89,8 @@
                 <?php echo "Contact Number: ".$_POST['phone'] ;?>
             </li>
         </ul>
+        </div>
     </div>
-
-
 <?php
     require_once 'includes/footer.php';
 ?>

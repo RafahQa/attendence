@@ -36,9 +36,9 @@
                 curl_close ($ch);
 
                 $response = json_decode($server_output);
-                if ($response->Messages[0]->Status == 'success') {
-                    return $response;
-                }
+                //if ($response->Messages[0]->Status == 'success') {
+                return $response;
+               // }
                 // $response = $mj->post(Resources::$Email, ['body' => $body]);
                 // $response->success() && var_dump($response->getData());
                 // return $response;
